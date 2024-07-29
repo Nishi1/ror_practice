@@ -74,4 +74,4 @@ HardJob.perform_async('some_arg', 1234)
 
 Accessing the Sidekiq Web Interface
 Navigate to 
-```bashhttp://localhost:3000/sidekiq``` in your browser to access the Sidekiq web interface.
+```bash http://localhost:3000/sidekiq``` in your browser to access the Sidekiq web interface.
