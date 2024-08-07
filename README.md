@@ -40,6 +40,24 @@ gem 'sidekiq'
 ```
 Run bundle install to install the gem.
 
+Add config file for sidekiq
+```
+:verbose: true
+:timeout: 25
+:queues:
+  - critical
+  - default
+  - low
+development:
+  :concurrency: 5
+```
+Run sidekiq with following commands:
+```
+bundle exec sidekiq
+bundle exec sidekiq -q critical # used to run critical queue only
+bundle exec sidekiq -C config/sidekiq.yml # this will check the queue order in this file and process job as per the order mentioned.
+
+```
 Generate a Sidekiq job with:
 ```bash
 rails generate sidekiq:job Hard
