@@ -1,5 +1,6 @@
 class HardJob
   include Sidekiq::Job
+  sidekiq_options retry: 5
 
   def perform(*args)
     # Do something
