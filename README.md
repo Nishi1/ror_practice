@@ -88,6 +88,8 @@ To schedule a job, open the Rails console with:
 rails console
 
 HardJob.perform_async('some_arg', 1234)
+HardJob.perform_at(1.minutes.from_now, 'new_args2233', 9898983)
+HardJob.perform_in(Time.now + 10.minutes, 'new_args2233', 9898983)
 ```
 
 Accessing the Sidekiq Web Interface
